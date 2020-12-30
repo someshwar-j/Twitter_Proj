@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+	
+	<link href="../static/css/style.css" rel="stylesheet" type="text/css">
+	<!-- <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">-->
+	
+	
+	<!-- Latest compiled and minified CSS -->
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+	
+	<!-- jQuery library -->
+	
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<link href="”css/bootstrap-responsive.css”" rel="”stylesheet”">
+
+
+</head>
+<!doctype html>
+<html lang="en">
+<head>
+	
+	<link href="../static/css/style.css" rel="stylesheet" type="text/css">
+	<!-- <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">-->
+	
+	
+	<!-- Latest compiled and minified CSS -->
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+	
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<link href="”css/bootstrap-responsive.css”" rel="”stylesheet”">
+
+
+</head>
+<body class="bg-danger">
+
+<h1 class="text-center bg-info mt-2">TWITTER DATA</h1>
+<div class="jumbotron mb-2">
+<table class="table ">
+  <thead>
+    <tr>
+      <th scope="col">created</th>
+      <th class= "text-center" scope="col">Tweets
+      <th scope="col">Sentiments</th>
+      <th scope="col">Retweets</th>
+      <th scope="col">Favourates</th>
+      <th scope="col">Profile</th>
+      <th scope="col">Followers</th>
+      <th scope="col">Friends</th>
+    </tr>
+  </thead>
+{% for i in tweets %}
+		
+		<tbody>
+		<tr>
+		  <td> {{  i.created_at  }}</td>
+		  <td>{{i.text}}</td>
+		  <td>{{i.sentiment}}</td>
+		  <td>{{ i.retweet_count }}</td>
+		  <td>{{ i.favourites_count }}</td>
+		  <td><img src="{{ i.profile_image_url_https }}" alt="..." class="img-thumbnail"></td>
+		  <td>{{ i.followers_count }}</td>
+		  <td>{{i.friends_count}}</td>
+		</tr>
+		</tbody>
+	
+{% endfor %}
+
+</table>
+</div>
+
+<h2 class="text-center bg-info mt-0">Most frequent keyword in received tweets is : {{word}} </h2>
+
+</body>
+</html>

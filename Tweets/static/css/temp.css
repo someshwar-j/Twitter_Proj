@@ -1,0 +1,14 @@
+#loading {
+
+  width: 100%;
+  height: 100vh;
+ /* top: 0;
+  left: 0;
+  position: fixed;
+  display: block;
+  */opacity: 0.7;
+  background-image: url('C:\Users\somesh\PycharmProjects\Twitter\Tweets\static\images\1.gif');
+
+  z-index: 99;
+  text-align: center;
+}

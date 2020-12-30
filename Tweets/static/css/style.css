@@ -1,0 +1,212 @@
+
+.body{
+overflow-x: hidden;
+}
+
+
+.bgimage
+{
+background-image: url('../images/bg.jpg');
+background-repeat: no-repeat;
+background-size: cover;
+background-attachment:fixed;
+width:auto%;
+height:400px;
+margin: 0px;
+padding: 0px;
+}
+
+.button
+ {
+
+    margin-left: 23%;
+    margin-right: 33%;
+    font-size:60%;
+    background-color:black;
+    border-size:22%;
+ }
+
+.heading
+{
+    color: white;
+    font-size: 600%;
+    padding-left:0;
+    margin-left:-10%;
+}
+
+.hcaption
+{
+    text-align: center;
+    padding-left: 38%;
+    padding-right: 38%;
+    font-size:75%;
+    color:white;
+    margin-left:-10%;
+}
+
+.searchform
+    {
+        width:46rem;
+        margin-top:11%;
+
+    }
+        {
+        padding-top:11%;
+        margin-right:10%;
+        }
+
+.searchinput
+    {
+        height: 61px;
+        margin-left:15%;
+    }
+
+    .btns
+        {
+           margin-right:10%;
+        }
+
+    .headingmiddel
+    {
+        margin-top:-10%;
+        font-size:450%;
+        color:black;
+        padding-left:8%;
+        padding-right:8%;
+    }
+
+
+        .captionmiddel
+    {
+        font-size:170%;
+        margin-left:-29%;
+        margin-right:-29%;
+    }
+
+    .cards
+    {
+        margin-top:-10%;
+        margin-bottom:10%;
+    }
+
+
+@media only screen and (max-width:992px)
+{
+
+        .body
+        {
+            overflow-x: hidden;
+            overflow-y: hidden;
+            overflow: scroll !important;
+
+        }
+
+        .bgimage
+        {
+        background-image: url('../images/bg.jpg');
+        /*background-repeat: no-repeat;
+        background-attachment:fixed;
+        */
+/*        position:relative;*/
+        left:0;
+        right:0;
+        width:100%;
+        height:202px;
+        margin: 0px;
+        padding: 0px;
+        }
+
+
+         .heading
+         {
+            margin-top: 1 rem!important;
+            font-size: 200%;
+            padding-top: 1 rem!important;
+            margin-left:2%;
+         }
+
+         .hcaption
+         {
+         font-size:4.5px;
+         margin-top: 0.5rem!important;
+         margin-left:2%;
+         padding-left:33%;
+         padding-right:33%;
+         }
+
+        .button
+         {
+
+            margin-left:35%;
+            font-size:5px;
+            background-color:black;
+            border-size:2%;
+            margin-top:-5%;
+
+         }
+
+         input,
+        input::-webkit-input-placeholder
+        {
+            font-size: 15px;
+            line-height: 4;
+        }
+        .btns
+         {
+            margin-right:-40%;
+            font-size:15px;
+            background-color:primary;
+            border-solid:10px;
+        }
+
+        .searchinput
+        {
+          padding-top: 0.5rem!important;
+          height:35px !important;
+        }
+
+        .searchform
+        {
+            width:12rem;
+            margin-top:4%;
+            padding-top:0%;
+
+        }
+    .no-marginLR
+    {
+    margin-left:0;
+    margin-right:0;
+    }
+
+        .headingmiddel
+    {
+        margin-top:-10%;
+        font-size:200%;
+        color:black;
+        padding-left:20%;
+        padding-right:20%;
+    }
+
+        .captionmiddel
+    {
+        font-size:70%;
+        margin-left:9%;
+        margin-right:8%;
+    }
+
+
+    .cards
+    {
+
+        margin-bottom:100%;
+
+    }
+
+    #waitttAmazingLover
+    {
+    color: deepskyblue; display: none;position:absolute;top:23% !important;left:10% !important;padding:2px;text-align: center;width: 40px; z-index: 99;
+    }
+
+
+}
+}
