@@ -1,8 +1,8 @@
 import os
 from flask import render_template, request, json
 from tweepy import OAuthHandler
-from tweepy import Stream
 from tweepy.streaming import StreamListener
+from tweepy import Stream
 from Tweets import create_app
 from collections import Counter
 from textblob import TextBlob
@@ -30,31 +30,30 @@ def twt_search():
             def on_data(self, data):
                 json_load = json.loads(data)
                 dict_tweets = dict()
-                for i in json_load:
-                    analysis = TextBlob(json_load["text"])
-                    print(analysis.sentiment)
-                    if analysis.sentiment[0] > 0:
-                        dict_tweets['sentiment'] = "Positive"
-                    elif analysis.sentiment[0] < 0:
-                        dict_tweets['sentiment'] = "Negative"
-                    else:
-                        dict_tweets['sentiment'] = "Neutral"
 
-                    dict_tweets["created_at"] = json_load["created_at"]
-                    dict_tweets["text"] = json_load["text"]
-                    dict_tweets["favourites_count"] = json_load["user"]["favourites_count"]
-                    dict_tweets["followers_count"] = json_load["user"]["followers_count"]
-                    dict_tweets["friends_count"] = json_load["user"]["friends_count"]
-                    dict_tweets["profile_image_url_https"] = json_load["user"]["profile_image_url_https"]
-                    dict_tweets["retweet_count"] = json_load.get('retweeted_status', {}).get('retweet_count',
-                                                                                       json_load.get('quoted_status',
-                                                                                                     {}).get(
-                                                                                           'retweet_count'))
+                analysis = TextBlob(json_load["text"])
+                if analysis.sentiment[0] > 0:
+                    dict_tweets['sentiment'] = "Positive"
+                elif analysis.sentiment[0] < 0:
+                    dict_tweets['sentiment'] = "Negative"
+                else:
+                    dict_tweets['sentiment'] = "Neutral"
+
+                dict_tweets["created_at"] = json_load["created_at"]
+                dict_tweets["text"] = json_load["text"]
+                dict_tweets["favourites_count"] = json_load["user"]["favourites_count"]
+                dict_tweets["followers_count"] = json_load["user"]["followers_count"]
+                dict_tweets["friends_count"] = json_load["user"]["friends_count"]
+                dict_tweets["profile_image_url_https"] = json_load["user"]["profile_image_url_https"]
+                dict_tweets["retweet_count"] = json_load.get('retweeted_status', {}).get('retweet_count',
+                                                                                   json_load.get('quoted_status',
+                                                                                                 {}).get(
+                                                                                       'retweet_count'))
 
                 lst_tweets.append(dict_tweets)
                 tweets.append(json_load['text'])
 
-                if len(tweets) == 10:
+                if len(lst_tweets) == 10:
                     return False
                 return True
 
@@ -63,8 +62,8 @@ def twt_search():
         auth = OAuthHandler(ckey, csecret)
         auth.set_access_token(atoken, asecret)
 
-        twitterstream = Stream(auth, Listener())
-        twitterstream.filter(languages=['en'], track=[keyword])
+        twitter_stream = Stream(auth, Listener())
+        twitter_stream.filter(languages=['en'], track=[keyword])
 
         lst_words = []
         for i in tweets:
